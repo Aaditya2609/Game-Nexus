@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap');s
+.single-product-container
+{
+    margin-right: auto;
+    margin-left: auto
+}
+.single-product-card
+{
+    display: flex;
+    width: 80%;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: "Oswald";
+    background-color: #070720;
+    padding: 0.75rem;
+    border-radius: 2rem;
+}
+
+.thumbnail
+{
+    width: 100%;
+    margin: 0;
+}
+.details
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0.5rem;
+    padding: 0;
+    
+}
+.name
+{
+    font-size: 2.5rem;
+    width: fit-content;
+    padding: 0px;
+    margin: 0px auto;
+}
+.price{
+    font-size: 1.5rem;
+    padding: 0px;
+    margin: 1rem 0 0;
+}
+.category
+{
+    font-size: 1.5rem;
+    padding: 0px;
+    margin: 1rem 0 0;
+}
+.description{
+    text-align: left;
+    font-size: 1.25rem;
+    margin-top:1rem;
+    padding: 0px;
+    width: 100%;
+}
+.studio
+{
+    font-size: 1.5rem;
+    margin: 1rem 0 0;
+    padding: 0px;
+    width: 100%;
+
+}
+#single-product-card-discount
+{
+    margin-left:1rem;
+    color: #39FF14;
+  font-weight: 400;
+}
+#single-product-card-original-price
+{
+    text-decoration: line-through;
+    color:#D3D3D3;
+    margin-left:1rem;
+}
+#single-product-card-add-to-cart
+{
+    width: 40%;
+    font-size: 18px;
+    color: white;
+    padding: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #212529;
+    border: 1px solid white;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-family: "oswald";
+}
+#single-product-card-add-to-wishlist
+{
+    width: 40%;
+    font-size: 18px;
+    color: white;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    margin-right: auto;
+    background-color: #212529;
+    border: 1px solid white;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    font-family: "oswald";
+}
+#single-product-card-add-to-wishlist:hover {
+    background-color: #e53637;
+  }
+  #single-product-card-add-to-cart:hover {
+    background-color: #29b9f0ff;
+  }

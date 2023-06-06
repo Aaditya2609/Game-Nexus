@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap');
+
+.login-image {
+  position: relative;
+  text-align: center;
+}
+
+.login-image img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -10;
+}
+#signup-heading{
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+.input-label
+{
+  color: white;
+  font-size: 1.5rem;
+}
+.signup-form{
+  font-family: "Oswald";
+  position: fixed;
+  text-align: left;
+  width: 30%;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  color: white;
+}
+.signup-input
+{
+  display: block;
+  font-size: 1.25rem;
+  width: 98%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+.signup-button
+{
+  width: 50%;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "oswald";
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #e53637;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#signup-email-error
+{
+  color: #e53637;
+  font-size: 1.5rem;
+}
+#show-password-button
+{
+  width: 30%;
+  font-size: 0.75rem;
+  margin:0 0.25rem;
+  font-family: "oswald";
+  background-color: #212529;;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.1rem;
+
+}
+#show-password{
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+}

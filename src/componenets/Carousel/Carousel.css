@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap');
+
+body {
+  background-color: #0b0c2a;
+}
+
+.carousel {
+  margin-top: 4rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 38%;
+  padding: 40px;
+  font-size: 60px;
+  font-weight: bolder;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-button.previous {
+  left: 16%;
+  z-index: 100;
+}
+
+.carousel-button.next {
+  right: 16%;
+  z-index: 100;
+}
+
+.image-container {
+  position: relative;
+  width: fit-content;
+}
+
+.carousel-image {
+  width: 70%;
+  border-radius: 1rem;
+}
+
+.image-overlay {
+  position: absolute;
+  width: 70%;
+  bottom: 0;
+  left: 15%;
+  right: 0;
+  font-family: "oswald";
+  padding: 10px;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.carousel-image:hover + .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay h2 {
+  margin-top: 0;
+}
+
+.image-overlay p {
+  margin-bottom: 0;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .carousel {
+    margin-top: 2rem;
+  }
+
+  .carousel-button {
+    top: 35%;
+    padding: 30px;
+    font-size: 40px;
+  }
+
+  .carousel-image {
+    width: 80%;
+  }
+
+  .image-overlay {
+    width: 79%;
+    font-size: 20px;
+  }
+  .carousel-button.previous {
+    left: 8%;
+    z-index: 100;
+  }
+  
+  .carousel-button.next {
+    right: 8%;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    margin-top: 1rem;
+  }
+
+  .carousel-button {
+    top: 30%;
+    padding: 20px;
+    font-size: 30px;
+  }
+
+  .carousel-image {
+    width: 90%;
+  }
+
+  .image-overlay {
+    width: 89%;
+    font-size: 18px;
+  }
+  .carousel-button.previous {
+    left: 2%;
+    z-index: 100;
+  }
+  
+  .carousel-button.next {
+    right: 2%;
+    z-index: 100;
+  }
+}

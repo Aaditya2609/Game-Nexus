@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap');
+body{
+    color: white;
+    font-family: "oswald";
+}
+.wishlist-container
+{
+    font-family: "Oswald";
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #0b0c2a;
+    padding: 1rem;
+    margin-top: 0rem;
+    color: white;
+}
+.wishlist-card
+{
+    width: 23.8%;
+    border: 1px solid transparent;
+    margin: 0.5rem auto;
+}
+.wishlist-card .thumbnail{
+    width: 100%;
+    border-radius: 1rem;
+}
+.wishlist-card .name
+{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.25rem;
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+.wishlist-card .price
+{
+    margin: 0;
+    padding: 0.25rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.wishlist-card .category
+{
+    font-size: 1.75rem;
+    padding: 0;
+    margin: 0;
+}
+.wishlist-add-cart{
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #212529;
+    border: 1px solid white;
+    border-radius: 1rem;
+    width: 10vw;
+    margin-top: 1rem;
+    font-family: "oswald";
+}
+.wishlist-remove-wishlist{
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    margin-right: auto;
+    background-color: #212529;
+    border: 1px solid white;
+    border-radius: 1rem;
+    width: 12vw;
+    margin-top: 1rem;
+    font-family: "oswald";
+}
+.wishlist-add-cart:hover{
+    background-color: #29b9f0ff;
+}
+.wishlist-remove-wishlist:hover{
+    background-color: #e53637
+}
