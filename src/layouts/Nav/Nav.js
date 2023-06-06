@@ -25,7 +25,7 @@ export function Nav() {
                     <NavLink to={stateAuth.isAuth? "/profile":"/login"} id="login" className="pages"><FontAwesomeIcon icon={faUser} /></NavLink>
                     {stateAuth.isAuth ? (<NavLink className="pages" to="/" onClick={() => {
                         dispatchAuth({ type: "USER_LOGOUT" });
-                        localStorage.removeItem("Token");
+                        localStorage.clear();
                         toast.success("Successfully Logged Out", {
                             position: "bottom-center",
                             autoClose: 2000,

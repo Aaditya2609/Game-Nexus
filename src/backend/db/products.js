@@ -72,13 +72,13 @@ export const products = [
   {
     _id: uuid(),
     categoryName: "Adventure",
-    name: "Uncharted 4: A Thief's End",
-    thumbnail: "https://cdn.ndtv.com/tech/gadgets/uc_4_thiefs_end.jpg",
-    description: "Join Nathan Drake on his greatest adventure yet. Explore exotic locations, solve intricate puzzles, and engage in thrilling third-person action.",
-    studio: "Naughty Dog",
-    rating: 3.5,
-    price: 3000,
-    originalPrice:3300,
+    name: "Shadow Of The Tomb Raider",
+    thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/750920/header.jpg?t=1680739250",
+    description: "Follow the iconic adventurer Lara Croft on her thrilling quests and dangerous expeditions. Players must navigate treacherous environments, solve intricate puzzles, and engage in intense combat to uncover ancient secrets and prevent a devastating apocalypse.",
+    studio: "Crystal Dynamics",
+    rating: 4.5,
+    price: 2000,
+    originalPrice:2200,
     discount:10
   },
   {
@@ -212,5 +212,29 @@ export const products = [
     price: 1300,
     originalPrice:2600,
     discount:50
+  },
+  {
+    _id: uuid(),
+    categoryName: "Action",
+    name: "Grand Theft Auto V",
+    thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg?t=1678296348",
+    description: "Explore the vast open world, engage in thrilling missions, and experience a gripping storyline filled with crime, heists, and memorable characters.",
+    studio: "Rockstar North",
+    rating: 5,
+    price: 950,
+    originalPrice:1900,
+    discount:50
+  },
+  {
+    _id: uuid(),
+    categoryName: "Action",
+    name: "Street Fighter 6",
+    thumbnail: "https://cdn.akamai.steamstatic.com/steam/apps/1364780/header.jpg?t=1685680525",
+    description: "Choose from a diverse roster of fighters, each with unique abilities and moves, and compete in competitive matches against friends or online opponents",
+    studio: "Capcom",
+    rating: 5,
+    price: 4000,
+    originalPrice:4400,
+    discount:10
   }
 ]

@@ -21,6 +21,8 @@ export const signupService=async( firstName,
                 payload: res.data.createdUser,
               });
             localStorage.setItem("token", res.data.encodedToken);
+            const userDetails=JSON.stringify(res.data.createdUser)
+            localStorage.setItem("userDetail",userDetails)
         }
     }
     catch(e)

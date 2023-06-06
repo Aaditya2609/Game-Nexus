@@ -196,10 +196,10 @@ const HandleWishlist=(item,dispatchCart)=>
         {
           applyFilters(stateProduct.product)?.map(item => {
             return (
-              <div className="game-card">
+              <div className="game-card" key={item._id}>
                 
               <NavLink id="game-card-navlink" to={`/singleproduct/${item._id}`}>
-              <div key={item._id} >
+              <div  >
                 <img className="thumbnail" src={item.thumbnail} alt="thumbnail"style={{ height: "300px" }} />
                 <h2 className="name">{item.name}</h2>
                 <p className="category">{item.categoryName}</p>

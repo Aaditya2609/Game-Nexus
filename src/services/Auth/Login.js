@@ -21,6 +21,8 @@ export const loginService=async( email,
               payload: res.data.foundUser,
             });
           localStorage.setItem("Token",res.data.encodedToken)
+          const userDetails=JSON.stringify(res.data.foundUser)
+          localStorage.setItem("userDetail",userDetails)
           toast.success("Login Successfull", {
             position: "bottom-center",
             autoClose: 2000,

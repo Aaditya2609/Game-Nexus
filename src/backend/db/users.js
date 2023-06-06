@@ -15,6 +15,5 @@ export const users = [
     password: "1234",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    addresses:[{houseNo:36/45,street:"Ronald"}],
   },
 ];

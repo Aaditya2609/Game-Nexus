@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import {  useAuth } from "../../contexts/AuthContext"
 import { loginService } from "../../services/Auth/Login"
 import "./Styles.css"
-import { useLocation, useNavigate } from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
 export function AuthLogin()
@@ -24,7 +24,7 @@ export function AuthLogin()
       }
   
       const handleLogin=()=>{
-        if(error==="" && password!="" && email!="")
+        if(error==="" && password!=="" && email!=="")
         loginService(email,password,dispatchAuth)
         else if(email==="")
         {
@@ -44,7 +44,7 @@ export function AuthLogin()
         setEmail("")
         setPassword("")
       }
-      else if(error!="")
+      else if(error!=="")
         {
         toast.error("Email Is Not Valid", {
           position: "bottom-center",
