@@ -24,7 +24,7 @@ return(
         <h1 id="category-heading">SHOP BY CATEGORY</h1>
         <div className="category-container">
         {stateProduct.category?.map((item)=>{
-            return(<div className="category-card" onClick={()=>handleClick(item.categoryName)}>
+            return(<div className="category-card" key={item._id}onClick={()=>handleClick(item.categoryName)}>
                 <img className="category-card-image" src={item.url} alt="category"/>
                 <div className="Category-card-text-overlay">
                 <h2>{item.categoryName}</h2>

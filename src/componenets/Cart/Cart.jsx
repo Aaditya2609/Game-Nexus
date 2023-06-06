@@ -55,7 +55,7 @@ export function Cart() {
                     <div className="cart-page-card">
                         {stateCart.myCart.map(item => {
                             return (
-                                <div className="cart-card-container">
+                                <div className="cart-card-container" key={item._id}>
                                     <div className="cart-card-thumbnail">
                                         <img src={item.thumbnail} alt="thumbnail" />
                                     </div>

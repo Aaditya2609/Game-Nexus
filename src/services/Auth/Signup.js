@@ -4,7 +4,6 @@ export const signupService=async( firstName,
     email,
     password,dispatchAuth)=>{
     try{
-        console.log("here")
         const res =await axios({
             method: 'POST',
             url: '/api/auth/signup',
@@ -15,14 +14,12 @@ export const signupService=async( firstName,
                 password: password,
             }
           });
-          console.log(res)
           if(res.status===201)
           {
             dispatchAuth({
                 type: "GET_USER_DETAILS",
                 payload: res.data.createdUser,
               });
-            console.log(res.data.createdUser);
             localStorage.setItem("token", res.data.encodedToken);
         }
     }
