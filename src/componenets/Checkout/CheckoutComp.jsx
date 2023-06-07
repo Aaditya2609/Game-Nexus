@@ -38,6 +38,15 @@ function CheckoutComp() {
         }
     }
 
+    const bgColor=(item)=>
+    {
+        if(item.tempName===selectedAddress.tempName)
+        {
+            return "#29b9f0ff"
+        }
+        else return "#070720"
+    }
+    
     // console.log( ?"yes":"no")
     return (
         <div style={{ minHeight: "30rem" }}>
@@ -45,7 +54,7 @@ function CheckoutComp() {
                 <div className='display-addresses'>
                     <h2 style={{ fontSize: "3rem" }}>Saved Addresses</h2>
                     {address &&
-                        address.map(item => <div className="checkout-address-card" key={item.tempName} onClick={()=>setSelectedAddress(item)}>
+                        address.map(item => <div className="checkout-address-card" key={item.tempName} style={{background:bgColor(item)}}onClick={()=>setSelectedAddress(item)}>
                             <p id="address-card-name">{item.tempName}</p>
                             <p>{item.tempAddress}, {item.tempCity}, {item.tempState}, {item.tempCountry}, {item.tempPincode}</p>
                             <p>Phone:{item.tempPhoneNo}</p>
