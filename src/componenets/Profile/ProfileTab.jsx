@@ -1,32 +1,45 @@
 import { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext"
 import AddressModel from "../AdressModel/AddressModel";
+import './styles.css'
 
 export function ProfileTab() {
     const [showAddressModel, setShowAddressModel] = useState(false);
     const [address,setAddress]=useState([]);
     const { stateAuth } = useAuth();
 
+    const handleDeleteAddress = (item) => {
+        const updatedAddress = address.filter(addressItem => addressItem.tempName !== item.tempName);
+        setAddress(updatedAddress);
+    }
+
     return (
-        <div>
-            <div>
-                <h2 onClick={()=>setShowAddressModel(true)}>
+        <div className="Profile">
+            <div className="User-Details">
+                <h2 className="user-details-heading" >
                     User Details
                 </h2>
-                <p>
-                    User Name: {stateAuth.userDetails[0]?.firstName} {stateAuth.userDetails[0]?.lastName}
+                <p className="user-details-text">
+                    Username: {stateAuth.userDetails[0]?.firstName} {stateAuth.userDetails[0]?.lastName}
                 </p>
-                <p>
+                <p className="user-details-text">
                     Email: {stateAuth.userDetails[0]?.email}
                 </p>
             </div>
-            <div>
-                <h1>Saved Addresses</h1>
+            <div className="address-container">
+                <h1 className="address-container-header">Saved Addresses</h1>
+                <div>
+                <button id="address-card-add-button" onClick={()=>setShowAddressModel(true)}>Add New Address</button>
+                </div>
                 {address&&
-                    address.map(item=><div>
-                        <p>{item.tempName}</p>
+                    address.map(item=><div className="address-card" key={item.tempName}>
+                        <p id="address-card-name">{item.tempName}</p>
                         <p>{item.tempAddress}, {item.tempCity}, {item.tempState}, {item.tempCountry}, {item.tempPincode}</p>
                         <p>Phone:{item.tempPhoneNo}</p>
+                        <div>
+                        {/* <button onClick={() => handleEditAddress(item)}>Edit</button> */}
+                        <button id="address-card-delete-button" onClick={() => handleDeleteAddress(item)}>Delete</button>
+                        </div>
                     </div>
                     )
                 }

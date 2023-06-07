@@ -4,8 +4,10 @@ import { quantityCartService } from "../../services/Cart/QuantityCart";
 import { removeCartService } from "../../services/Cart/RemoveCart";
 import { addWishlistService } from "../../services/Wishlist/AddWishlist";
 import './Styles.css'
+import { useNavigate } from "react-router-dom";
 
 export function Cart() {
+    const navigate=useNavigate();
     const { stateCart, dispatchCart } = useCart();
 
     const finalPrice = stateCart.myCart.reduce(
@@ -96,7 +98,7 @@ export function Cart() {
                             <p>₹ {total}</p>
                             </div>
                             <p className="cart-summary-savings">You Saved ₹ {Discount} on this order </p>
-                            <button>Check Out</button>
+                            <button id="cart-checkout" onClick={()=>navigate("/checkout")}>Check Out</button>
                             </div>
                             
   

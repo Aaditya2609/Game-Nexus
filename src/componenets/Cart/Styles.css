@@ -68,6 +68,7 @@
     font-size: 1.5rem;
 }
 #cart-card-decrement{
+    cursor: pointer;
     font-size: 1.5rem;
     padding-bottom: 0.15rem;
     color: white;
@@ -79,6 +80,7 @@
     font-family: "oswald";
 }
 #cart-card-increment{
+    cursor: pointer;
     font-size: 1.5rem;
     padding-bottom: 0.15rem;
     width: 1.75rem;
@@ -104,6 +106,7 @@ border-radius: 2rem;
 }
 #cart-card-remove
 {
+    cursor: pointer;
     width: 49%;
     font-size: 1.25rem;
     margin: 0.75rem 0rem 0.5rem;
@@ -121,6 +124,7 @@ border-radius: 2rem;
 }
 #cart-card-wishlist
 {
+    cursor: pointer;
     width: 49%;
     font-size: 1.25rem;
     margin: 0.75rem 0.25rem 0.5rem;
@@ -133,7 +137,7 @@ border-radius: 2rem;
 }
 #cart-card-wishlist:hover
 {
-    background-color: #29b9f0ff
+    background-color: #29b9f0ff;
 }
 .cart-summary
 {
@@ -173,4 +177,17 @@ hr{
 {
     color:#39FF14;
     font-size: 1.25rem;
+}
+#cart-checkout
+{
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 0.75rem 0.25rem 0.5rem;
+    background-color: #29b9f0ff;
+    border:1px solid white;
+    color: white;
+    font-family: "oswald";
+    padding: 0.25rem;
+    border-radius: 1rem;
+    cursor: pointer;
 }

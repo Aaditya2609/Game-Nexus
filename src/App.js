@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import RequiresAuth from "./componenets/RequiresAuth";
 import { Nav } from "./layouts/Nav/Nav";
 import { WishListPage } from "./Pages/WishlistPage";
+import Checkout from "./Pages/Checkout";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/Login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
         <Route element={<RequiresAuth/>}>
           <Route path="/cart" element={<CartPage/>}/>
           <Route path="/wishlist" element={<WishListPage/>}/>

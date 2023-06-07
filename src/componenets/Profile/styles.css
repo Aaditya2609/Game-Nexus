@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap');
+.Profile
+{
+    background-color: #070720;
+    width: 40vw;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.user-details-heading
+{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.user-details-text
+{
+    font-size: 1.5rem;
+}
+.address-container-header
+{
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+.address-card
+{
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    border: 2px solid #29b9f0ff;
+    border-radius: 1.25rem;
+}
+#address-card-name{
+    font-weight: bolder;
+    font-size: 2rem;
+}
+#address-card-delete-button
+{
+    font-family: "oswald";
+    font-size: 1.5rem;
+    background-color: #e53637;
+    color: white;
+    padding: 0rem 0.5rem;
+    border: 2px solid white;
+    border-radius: 0.8rem;
+    margin: 1rem;
+}
+#address-card-add-button
+{
+    font-family: "oswald";
+    font-size: 1.5rem;
+    background-color: #29b9f0ff;
+    color: white;
+    padding: 0rem 0.5rem;
+    border: 2px solid white;
+    border-radius: 0.8rem;
+    margin: 1rem;
+}

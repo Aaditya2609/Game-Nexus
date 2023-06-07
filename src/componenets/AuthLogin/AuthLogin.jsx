@@ -25,7 +25,9 @@ export function AuthLogin()
   
       const handleLogin=()=>{
         if(error==="" && password!=="" && email!=="")
-        loginService(email,password,dispatchAuth)
+        {loginService(email,password,dispatchAuth)
+        navigate("/Productlist")}
+
         else if(email==="")
         {
         toast.error("Email Cannot Be Empty", {

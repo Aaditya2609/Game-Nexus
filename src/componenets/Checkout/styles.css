@@ -1,0 +1,17 @@
+.checkout-page-details
+{
+    background-color: #070720;
+    position: fixed;
+    left:65%;
+    top:15%;
+    border: 2px solid white;
+    height: fit-content;
+    width: 30%;
+}
+.cart-summary-item-list
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+    font-size: 1.5rem;
+}
