@@ -23,6 +23,8 @@ function AddressModel({ showAddressModel, onClose,address,setAddress }) {
         const newAddress=[...address,tempAddress]
         setAddress(newAddress)
         onClose();
+        const localAddress=JSON.stringify(newAddress)
+        localStorage.setItem("userAddress",localAddress)
       }
     return (
         <div className='Address-container' onClick={() => onClose()}>

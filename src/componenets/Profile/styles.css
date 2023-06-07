@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap');
+
+.Profile-container
+{
+    min-height: 30rem;
+}
 .Profile
 {
     background-color: #070720;
@@ -6,6 +11,9 @@
     margin: 1rem auto;
     padding: 1rem;
     border-radius: 1rem;
+}
+.user-details{
+    height: 2rem;
 }
 .user-details-heading
 {

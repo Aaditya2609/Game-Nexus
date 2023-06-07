@@ -5,15 +5,20 @@ import './styles.css'
 
 export function ProfileTab() {
     const [showAddressModel, setShowAddressModel] = useState(false);
-    const [address,setAddress]=useState([]);
+    const localAddress=JSON.parse(localStorage.getItem("userAddress"));
+    const setaddress=localAddress?localAddress:[]
+    const [address,setAddress]=useState(setaddress);
     const { stateAuth } = useAuth();
 
     const handleDeleteAddress = (item) => {
         const updatedAddress = address.filter(addressItem => addressItem.tempName !== item.tempName);
         setAddress(updatedAddress);
+        const localAddress=JSON.stringify(updatedAddress)
+        localStorage.setItem("userAddress",localAddress)
     }
 
     return (
+        <div className="Profile-container">
         <div className="Profile">
             <div className="User-Details">
                 <h2 className="user-details-heading" >
@@ -37,7 +42,6 @@ export function ProfileTab() {
                         <p>{item.tempAddress}, {item.tempCity}, {item.tempState}, {item.tempCountry}, {item.tempPincode}</p>
                         <p>Phone:{item.tempPhoneNo}</p>
                         <div>
-                        {/* <button onClick={() => handleEditAddress(item)}>Edit</button> */}
                         <button id="address-card-delete-button" onClick={() => handleDeleteAddress(item)}>Delete</button>
                         </div>
                     </div>
@@ -46,6 +50,7 @@ export function ProfileTab() {
             </div>
             {showAddressModel&&<AddressModel showAddressModel={showAddressModel} onClose={()=>setShowAddressModel(false)} address={address} setAddress={setAddress}/>}
            
+        </div>
         </div>
     )
 }

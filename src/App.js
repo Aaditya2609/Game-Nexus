@@ -14,6 +14,7 @@ import RequiresAuth from "./componenets/RequiresAuth";
 import { Nav } from "./layouts/Nav/Nav";
 import { WishListPage } from "./Pages/WishlistPage";
 import Checkout from "./Pages/Checkout";
+import Footer from "./layouts/Nav/Footer/Footer";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         </Route>
       </Routes>
       <ToastContainer />
+      <Footer/>
     </div>
   );
 }

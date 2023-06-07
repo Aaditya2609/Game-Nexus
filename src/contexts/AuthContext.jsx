@@ -10,6 +10,7 @@ const AuthProvider=({children})=>
     const token=localStorage.getItem("Token");
     const userDetail=localStorage.getItem("userDetail")
     const userDetailObject=JSON.parse(userDetail)
+    console.log( token ? "yes":"No")
     const [stateAuth, dispatchAuth] = useReducer(authReducer, {
         userDetails: userDetailObject ? [userDetailObject]:[],
         token: token ?? null,

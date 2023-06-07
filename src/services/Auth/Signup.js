@@ -20,7 +20,7 @@ export const signupService=async( firstName,
                 type: "GET_USER_DETAILS",
                 payload: res.data.createdUser,
               });
-            localStorage.setItem("token", res.data.encodedToken);
+            localStorage.setItem("Token", res.data.encodedToken);
             const userDetails=JSON.stringify(res.data.createdUser)
             localStorage.setItem("userDetail",userDetails)
         }

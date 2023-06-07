@@ -21,7 +21,7 @@ export function Category()
 
 return(
     <div>
-        <h1 id="category-heading">SHOP BY CATEGORY</h1>
+        <h1 id="category-heading">Shop By Category</h1>
         <div className="category-container">
         {stateProduct.category?.map((item)=>{
             return(<div className="category-card" key={item._id}onClick={()=>handleClick(item.categoryName)}>

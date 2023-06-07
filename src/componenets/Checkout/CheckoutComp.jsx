@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useCart } from '../../contexts/CartContext';
 import './styles.css'
+import AddressModel from '../AdressModel/AddressModel';
+import { toast } from 'react-toastify';
 
 function CheckoutComp() {
-    const { stateCart, dispatchCart } = useCart();
+    const [showAddressModel, setShowAddressModel] = useState(false);
+    const localAddress = JSON.parse(localStorage.getItem("userAddress"));
+    const [selectedAddress, setSelectedAddress] = useState({});
+    const setaddress = localAddress ? localAddress : []
+    const [address, setAddress] = useState(setaddress);
+
+    const handleDeleteAddress = (item) => {
+        const updatedAddress = address.filter(addressItem => addressItem.tempName !== item.tempName);
+        setAddress(updatedAddress);
+        const localAddress = JSON.stringify(updatedAddress)
+        localStorage.setItem("userAddress", localAddress)
+    }
+
+    const { stateCart } = useCart();
 
     const finalPrice = stateCart.myCart.reduce(
         (acc, curr) => (acc += curr.originalPrice * curr.qty),
@@ -14,47 +29,80 @@ function CheckoutComp() {
         0
     );
     const total = finalPrice - Discount;
+    const HandleOrder =()=>
+    {
+        toast.success("Order Placed", {
+            position: "bottom-center",
+            autoClose: 2000,
+          });
+    }
     return (
-        <div>
-            <div className="checkout-page-details">
-                <div className="cart-summary">
-                    <h2 className="cart-summary-title">Order Summary</h2>
-                    {stateCart.myCart.map(item => <div className='cart-summary-item-list'><p>{item.name} ({item.qty})</p> <p>{item.price * item.qty}</p></div>)}
-                    <div className="cart-summary-item-container">
-                        <hr></hr>
-                        <div className="cart-summary-item">
-                            <p>Price ({stateCart.myCart.reduce((acc, cv) => acc + cv.qty, 0)} items)</p>
-                            <p>₹{finalPrice}</p>
-                        </div>
-                        <div className="cart-summary-item">
-                            <p>Discount</p>
-                            <p>₹{Discount}</p>
-                        </div>
-                        <div className="cart-summary-item delivery">
-                            <p>Delivery Charges</p>
-                            <p>Free</p>
-                        </div>
+        <div style={{ minHeight: "30rem" }}>
+            <div className='checkout-page-container'>
+                <div className='display-addresses'>
+                    <h2 style={{ fontSize: "3rem" }}>Saved Addresses</h2>
+                    {address &&
+                        address.map(item => <div className="checkout-address-card" key={item.tempName} onClick={()=>setSelectedAddress(item)}>
+                            <p id="address-card-name">{item.tempName}</p>
+                            <p>{item.tempAddress}, {item.tempCity}, {item.tempState}, {item.tempCountry}, {item.tempPincode}</p>
+                            <p>Phone:{item.tempPhoneNo}</p>
+                            <div>
+                                <button id="address-card-delete-button" onClick={() => handleDeleteAddress(item)}>Delete</button>
+                            </div>
 
-                        <hr></hr>
-                        <div className="cart-summary-item amount">
-                            <p>Total Amount</p>
-                            <p>₹ {total}</p>
                         </div>
-                        <p className="cart-summary-savings">You Saved ₹ {Discount} on this order </p>
-                        <button>Place Order</button>
-                    </div>
-
-
+                        )
+                    }
+                    <button id="address-card-add-button" onClick={() => setShowAddressModel(true)}>Add New Address</button>
+                    {showAddressModel && <AddressModel showAddressModel={showAddressModel} onClose={() => setShowAddressModel(false)} address={address} setAddress={setAddress} />}
                 </div>
+                <div className="checkout-page-details">
+                    <div className="cart-summary">
+                        <h2 className="cart-summary-title">Order Summary</h2>
+                        {stateCart.myCart.map(item => <div className='cart-summary-item-list'><p>{item.name} ({item.qty})</p> <p>{item.price * item.qty}</p></div>)}
+                        <div className="cart-summary-item-container">
+                            <hr></hr>
+                            <div className="cart-summary-item">
+                                <p>Price ({stateCart.myCart.reduce((acc, cv) => acc + cv.qty, 0)} items)</p>
+                                <p>₹{finalPrice}</p>
+                            </div>
+                            <div className="cart-summary-item">
+                                <p>Discount</p>
+                                <p>₹{Discount}</p>
+                            </div>
+                            <div className="cart-summary-item delivery">
+                                <p>Delivery Charges</p>
+                                <p>Free</p>
+                            </div>
+
+                            <hr></hr>
+                            <div className="cart-summary-item amount">
+                                <p>Total Amount</p>
+                                <p>₹ {total}</p>
+                            </div>
+                            <hr></hr>
+                            <div className="cart-summary-address">
+                                <p className='cart-summary-address-header'>Delivery Address:</p>
+                                <p className="cart-summary-address-name">{selectedAddress?.tempName}</p>
+                                <p>{selectedAddress?.tempAddress}, {selectedAddress?.tempCity}, {selectedAddress?.tempState}, {selectedAddress?.tempCountry}, {selectedAddress?.tempPincode}</p>
+                                <p>Phone:{selectedAddress?.tempPhoneNo}</p>
+
+                            </div>
+                            <p className="cart-summary-savings">You Saved ₹ {Discount} on this order </p>
+                            <button className="order-button" onClick={HandleOrder}>Place Order</button>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
             </div>
-
-
-
-
-
-
-
-
         </div>
     )
 }

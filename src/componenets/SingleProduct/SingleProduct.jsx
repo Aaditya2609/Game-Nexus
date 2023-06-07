@@ -77,8 +77,7 @@ const HandleWishlist=(item,dispatchCart)=>
 }
     
     return(
-        <div>
-            <Nav/>
+        <div style={{minHeight:"30rem"}}>
         <div className="single-product-container">
             <div className="single-product-card" key={product?._id} >
             <div className="single-product-card image">

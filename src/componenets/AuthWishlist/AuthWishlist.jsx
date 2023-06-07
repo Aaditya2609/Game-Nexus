@@ -6,7 +6,7 @@ export function AuthWishlist()
     const {stateCart,dispatchCart}=useCart()
 
     return(
-        <div>
+        <div style={{minHeight:"30rem"}}>
             <h1 style={{marginTop:"1rem"}}>My Wishlist ({stateCart.myWishlist.length} items)</h1>
             <div className="wishlist-container">
                 {stateCart.myWishlist.length===0?(<div style={{margin:" 1rem auto",fontSize:"3rem"}}>Your Wishlist Is Empty</div>):(

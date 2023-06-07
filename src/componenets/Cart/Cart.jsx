@@ -50,7 +50,7 @@ export function Cart() {
 
     }
     return (
-        <div>
+        <div style={{minHeight:"30rem"}}>
             <h1 style={{ marginTop: "1rem" }}>My Cart ({stateCart.myCart.length} items) </h1>
             {stateCart.myCart.length === 0 ? (<div style={{ margin: "1rem auto", fontSize: "3rem" }}>Your Cart Is Empty</div>) : (
                 <div className="cart-page-container">
