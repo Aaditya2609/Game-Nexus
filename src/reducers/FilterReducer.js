@@ -5,6 +5,11 @@ export const filterReducer = (stateFilter, actionFilter) => {
         ...stateFilter,
         priceFilter: actionFilter.payload,
       };
+      case "SET_SEARCH_FILTER":
+        return {
+          ...stateFilter,
+          searchFilter: actionFilter.payload,
+        };
 
     case "SET_CATEGORY_FILTER":
       return {
@@ -29,7 +34,8 @@ export const filterReducer = (stateFilter, actionFilter) => {
         ...stateFilter,
         ratingFilter: 0,
         categoryFilter: [],
-        priceFilter: ""
+        priceFilter: "",
+        searchFilter:""
       };
 
     default:

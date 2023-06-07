@@ -1,9 +1,8 @@
 .checkout-page-details
 {
     background-color: #070720;
-    position: fixed;
-    left:65%;
-    top:15%;
+    margin-top: 3rem;
+    margin-left: 3rem;
     border: 2px solid white;
     height: fit-content;
     width: 30%;

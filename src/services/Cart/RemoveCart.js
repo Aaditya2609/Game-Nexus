@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const removeCartService = async (id, dispatchCart) => {
     const token = localStorage.getItem("Token")
@@ -12,6 +13,10 @@ export const removeCartService = async (id, dispatchCart) => {
           });
           if (response.status === 200) {
             dispatchCart({ type: "REMOVE_FROM_CART", payload: response.data.cart });
+            toast.error("Removed from cart", {
+              position: "bottom-center",
+              autoClose: 2000,
+            });
         }
     }
     catch (e) {

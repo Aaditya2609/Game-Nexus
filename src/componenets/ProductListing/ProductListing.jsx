@@ -19,13 +19,13 @@ export function ProductListing() {
   const {stateAuth}=useAuth();
   const navigate=useNavigate();
 
-  const{priceFilter,ratingFilter,categoryFilter}=stateFilter;
+  const{priceFilter,ratingFilter,categoryFilter,searchFilter}=stateFilter;
   const handleResetFilters = () => {
     dispatchFilter({
       type:"RESET",
     });
   };
-
+ 
 
   const handlePriceFilterChange = (event) => {
     dispatchFilter({
@@ -69,6 +69,11 @@ export function ProductListing() {
 
     if (ratingFilter > 0) {
       product = product.filter(item => item.rating >= ratingFilter);
+    }
+
+    if(searchFilter!=="")
+    {
+      product=product.filter(item=>item.name.toLowerCase().includes(searchFilter.toLowerCase()));
     }
 
     return product;
@@ -132,7 +137,7 @@ const HandleWishlist=(item,dispatchCart)=>
 
 }
   return (
-    <div id="product-list">
+    <div id="product-list" style={{minHeight:"31rem"}}>
       <div className="filter-sidebar">
         <h2>Filters</h2>
         <div className="filter-group">

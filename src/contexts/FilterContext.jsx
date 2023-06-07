@@ -7,7 +7,8 @@ export function FilterProvider({children}){
     const [stateFilter, dispatchFilter] = useReducer(filterReducer,{
         priceFilter:"",
         categoryFilter:[],
-        ratingFilter:0
+        ratingFilter:0,
+        searchFilter:""
       });
 
 

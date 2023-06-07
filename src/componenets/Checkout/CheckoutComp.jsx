@@ -11,12 +11,6 @@ function CheckoutComp() {
     const setaddress = localAddress ? localAddress : []
     const [address, setAddress] = useState(setaddress);
 
-    const handleDeleteAddress = (item) => {
-        const updatedAddress = address.filter(addressItem => addressItem.tempName !== item.tempName);
-        setAddress(updatedAddress);
-        const localAddress = JSON.stringify(updatedAddress)
-        localStorage.setItem("userAddress", localAddress)
-    }
 
     const { stateCart } = useCart();
 
@@ -31,11 +25,20 @@ function CheckoutComp() {
     const total = finalPrice - Discount;
     const HandleOrder =()=>
     {
+        if(Object.keys(selectedAddress).length)
         toast.success("Order Placed", {
             position: "bottom-center",
             autoClose: 2000,
           });
+        else{
+            toast.error("Please Select Address", {
+                position: "bottom-center",
+                autoClose: 2000,
+              });
+        }
     }
+
+    // console.log( ?"yes":"no")
     return (
         <div style={{ minHeight: "30rem" }}>
             <div className='checkout-page-container'>
@@ -46,9 +49,6 @@ function CheckoutComp() {
                             <p id="address-card-name">{item.tempName}</p>
                             <p>{item.tempAddress}, {item.tempCity}, {item.tempState}, {item.tempCountry}, {item.tempPincode}</p>
                             <p>Phone:{item.tempPhoneNo}</p>
-                            <div>
-                                <button id="address-card-delete-button" onClick={() => handleDeleteAddress(item)}>Delete</button>
-                            </div>
 
                         </div>
                         )
@@ -83,10 +83,12 @@ function CheckoutComp() {
                             <hr></hr>
                             <div className="cart-summary-address">
                                 <p className='cart-summary-address-header'>Delivery Address:</p>
+                                {Object.keys(selectedAddress).length ?
+                                <div>
                                 <p className="cart-summary-address-name">{selectedAddress?.tempName}</p>
                                 <p>{selectedAddress?.tempAddress}, {selectedAddress?.tempCity}, {selectedAddress?.tempState}, {selectedAddress?.tempCountry}, {selectedAddress?.tempPincode}</p>
                                 <p>Phone:{selectedAddress?.tempPhoneNo}</p>
-
+                                </div>:<div></div>}
                             </div>
                             <p className="cart-summary-savings">You Saved ₹ {Discount} on this order </p>
                             <button className="order-button" onClick={HandleOrder}>Place Order</button>
