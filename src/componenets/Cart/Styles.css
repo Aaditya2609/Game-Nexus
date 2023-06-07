@@ -20,7 +20,7 @@
     left:65%;
     top:20%;
     border: 2px solid white;
-    height: 50%;
+    height: fit-content;
     width: 30%;
 }
 .cart-card-container{
