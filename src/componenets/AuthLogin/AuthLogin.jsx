@@ -69,9 +69,9 @@ export function AuthLogin()
       };
       
     return(
-        <div>
+        <div className="AuthLogin-container">
         <div className="login-image">
-            <img src="https://images7.alphacoders.com/327/327601.jpg" alt="background"/>
+            <img className="login-image-image" src="https://images7.alphacoders.com/327/327601.jpg" alt="background"/>
         </div>
         <div className="Login-container">
         <h2 id="login-heading">Login</h2>

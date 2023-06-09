@@ -26,7 +26,7 @@ export function Home()
    ]
 
     return(
-        <div>
+        <div style={{minHeight:"30rem"}}>
             <h2 style={{fontSize:"3rem"}}>Featured Products</h2>
             <Carousel images={images} />
             <Category/>

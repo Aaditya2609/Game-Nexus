@@ -1,19 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap');
 
-.login-image {
+.AuthLogin-container
+{
+  margin: 0rem;
+  padding: 0rem;
+  min-height: 30rem;
+}
+/* .login-image {
   position: relative;
   text-align: center;
-}
+  padding: 0.25rem 0 0;
+} */
+
 
 .login-image{
-    position: fixed;
+    position: absolute;
+    top: 0;
     object-fit: cover;
-
+    margin: 0rem;
+    z-index: -300;
+}
+.login-image-image
+{
+  
+  width: 99vw;
+  height: auto;
 }
 
 .Login-container {
   font-family: "Oswald";
-  position: fixed;
+  position: absolute;
   text-align: left;
   width: 30%;
   top: 55%;
@@ -71,31 +87,4 @@ color: white;
 .Login-container button:hover
 {
 background-color: #4484ce;
-}
-
-@media (max-width: 768px) {
-  .Login-container {
-    width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .Login-container {
-    width: 95%;
-    padding: 1.5rem;
-  }
-  
-  .Login-container input {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .Login-container button {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  #login-heading {
-    font-size: 2.5rem;
-  }
 }

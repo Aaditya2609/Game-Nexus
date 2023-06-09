@@ -6,10 +6,7 @@
 }
 .footer
 {
-    /* position: sticky; */
     width: 100%;
-    /* bottom: 0; */
-    margin: 2rem 0 0;
     background-color: #070720;
 }
 .footer-heading
