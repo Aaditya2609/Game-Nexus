@@ -10,10 +10,12 @@ import { toast } from "react-toastify";
 import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
 import { useFilter } from "../../contexts/FilterContext";
+import { useCart } from "../../contexts/CartContext";
 
 
 export function Nav() {
     const { stateAuth, dispatchAuth } = useAuth();
+    const { stateCart, dispatchCart } = useCart();
     const [searchtext,setSearchText]=useState("");
     const {dispatchFilter}=useFilter();
     const navigate=useNavigate();
@@ -38,6 +40,7 @@ export function Nav() {
                     <NavLink to={stateAuth.isAuth ? "/profile" : "/login"} id="login" className="pages"><FontAwesomeIcon icon={faUser} /></NavLink>
                     {stateAuth.isAuth ? (<NavLink className="pages" to="/" onClick={() => {
                         dispatchAuth({ type: "USER_LOGOUT" });
+                        dispatchCart({type:"CLEAR_CART"})
                         localStorage.clear();
                         toast.success("Successfully Logged Out", {
                             position: "bottom-center",

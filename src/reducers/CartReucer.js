@@ -15,6 +15,13 @@ export const cartReducer = (stateCart, actionCart) => {
           myCart: actionCart.payload,
           quantity: stateCart.quantity - 1,
         };
+        case "CLEAR_CART":
+        return {
+          ...stateCart,
+          myCart: [],
+          myWishlist:[],
+          quantity: 0,
+        };
   
       default:
         return stateCart;
