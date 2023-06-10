@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600;700&display=swap');
 
+.login-image {
+  position: relative;
+  text-align: center;
+}
+
+.login-image img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -10;
+}
 #signup-heading{
   color: white;
   text-align: center;
@@ -12,10 +23,10 @@
 }
 .signup-form{
   font-family: "Oswald";
-  position: absolute;
+  position: fixed;
   text-align: left;
   width: 30%;
-  top: 60%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.8);

@@ -20,7 +20,7 @@ import Footer from "./layouts/Nav/Footer/Footer";
 function App() {
 
   return (
-    <div className="App" >
+    <div className="App">
       <Nav/>
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -37,6 +37,7 @@ function App() {
         </Route>
       </Routes>
       <ToastContainer />
+      <Footer/>
     </div>
   );
 }

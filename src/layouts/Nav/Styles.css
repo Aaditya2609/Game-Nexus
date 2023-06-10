@@ -11,12 +11,9 @@ body {
 }
 
 nav {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
   width: 100%;
   opacity: 0.8;
   background-color: #070720;
@@ -25,19 +22,19 @@ nav {
   align-items: center;
   color: white;
   font-family: 'Oswald';
-  height: fit-content;
+  height: 5.57rem;
   z-index: 20000;
 }
 
 ul {
-  padding: 0.5rem;
+  padding: 2rem;
 }
 
 #title {
   text-decoration: none;
-  margin-left: 1.5rem;
-  width: 12rem;
-  font-size: 1.25rem;
+  margin-left: 2rem;
+  width: 15rem;
+  font-size: 1.5rem;
   color: white;
   padding: 1.5rem;
 }
@@ -46,8 +43,8 @@ ul {
   text-decoration: none;
   font-size: 1.25rem;
   color: white;
-  margin: 0.25rem;
-  padding: 0.25rem;
+  margin: 1rem;
+  padding: 0.5rem;
 }
 
 .search-bar
@@ -66,66 +63,5 @@ ul {
 {
   display: flex;
   align-items: center;
-  width: 45%;
-}
-.pages:hover {
-  color: #4484ce;
-}
-#title:hover{
-  color: #e53637;
-
-}
-
-@media (max-width: 768px)
-{
-  nav{
-    height: fit-content;
-  }
-  .pages {
-    margin: 0.2rem;
-    padding:0.2rem;
-    font-size: 1rem;
-  }
-  ul{
-    padding: 0.25rem;
-  }
-  #title {
-    margin-left: 1rem;
-    width: 8rem;
-    font-size: 1rem;
-    color: white;
-    padding: 0.25rem;
-  }
-  .search-bar-div
-{
-  display: flex;
-  align-items: center;
-  width: 36%;
-}
-}
-
-@media (max-width: 480px)
-{
-  .pages {
-    margin: 0.5rem;
-    padding:0.5rem;
-    font-size: 1rem;
-  }
-  #title {
-    margin-left: 0.5rem;
-    width: 10rem;
-    font-size: 1.5rem;
-    color: white;
-    padding: 0.5rem;
-  }
-  .search-bar-div
-{
-  display: flex;
-  align-items: center;
-  width: 70%;
-}
-nav{
-  flex-direction: column;
-  height: fit-content;
-}
+  width: 50%;
 }

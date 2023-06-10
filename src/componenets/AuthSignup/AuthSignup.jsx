@@ -108,7 +108,7 @@ export function AuthSignup() {
     return (
         <div>
             <div className="login-image">
-                <img className="login-image-image" src="https://images7.alphacoders.com/327/327601.jpg" alt="background" />
+                <img src="https://images7.alphacoders.com/327/327601.jpg" alt="background" />
             </div>
             <div className="signup-form">
             <h2 id="signup-heading">Signup</h2>
